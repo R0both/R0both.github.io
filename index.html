@@ -366,7 +366,7 @@
           
             <p>ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。</p>
 <p> 攻击机：<br> kali<br> ip:192.168.245.132</p>
-<p> 受害机：<br> win7<br> ip:192.168.61.160</p>
+<p> 受害机：<br> win7<br> ip:192.168.245.132</p>
 <p>这里我是用我内网的两台机子测试的，如果是外网的那就要设置路由器的端口转发之类的。</p>
 <h2 id="漏洞分析"><a href="#漏洞分析" class="headerlink" title="漏洞分析"></a>漏洞分析</h2><p>漏洞出现在Windows SMB v1中的内核态函数srv!SrvOs2FeaListToNt在处理FEA(File Extended Attributes)转换时，在大非分页池(内核的数据结构，Large Non-Paged Kernel Pool)上存在缓冲区溢出。函数srv!SrvOs2FeaListToNt在将FEA list转换成NTFEA(Windows NT FEA) list前会调用srv!SrvOs2FeaListSizeToNt去计算转换后的FEA lsit的大小。然后会进行如下操作：</p>
 <p>1.srv!SrvOs2FeaListSizeToNt会计算FEA list的大小并更新待转换的FEA list的大小</p>
