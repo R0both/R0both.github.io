@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Robot&#39;s blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-04-10T09:28:29.799Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Robot</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2017-6823 Fiyo CMS权限提升漏洞</title>
+    <link href="http://yoursite.com/2018/04/10/CVE-2017-6823-Fiyo-CMS%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87%E6%BC%8F%E6%B4%9E/"/>
+    <id>http://yoursite.com/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/</id>
+    <published>2018-04-10T08:25:58.000Z</published>
+    <updated>2018-04-10T09:28:29.799Z</updated>
+    
+    <content type="html"><![CDATA[<p>emmm,这是西普铁三训练营里面的一个Fiyo CMS权限提升漏洞复现，记录一下。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/1.png" alt="图一"><a id="more"></a></p><p>先访问网站后台[<a href="http://192.168.1.3/dapur/]。" target="_blank" rel="noopener">http://192.168.1.3/dapur/]。</a></p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/2.png" alt="图二"></p><p>是同用户[admin]密码[admin888]登陆网站后台。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/3.png" alt="图三"></p><p>在点New User新建一个用户，用户名[xipu]密码[123456]电子邮箱[<a href="mailto:xipu@qq.com" target="_blank" rel="noopener">xipu@qq.com</a>]User Group选择【Editor】Name Lengkap名字随便写。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/4.png" alt="图四"></p><p>能看到各个组的level等级,Super Administrator是最高权限用户。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/5.png" alt="图五"></p><p>点右上角Sign Out推出登陆。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/6.png" alt="图六"></p><p>再使用刚刚创建的账号登陆。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/7.png" alt="图七"></p><p>可以看到左边的功能变得少了，么有操作用户的权限了。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/8.png" alt="图八"></p><p>点击右上角头像选择Edit Profile编辑资料。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/9.png" alt="图九"></p><p>点击User Group 看能否修改为管理员组，发现并不能。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/10.png" alt="图十"></p><p>接下来就抓包试一下能不能修改，打开浏览器设置好代理</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/11.png" alt="十一"></p><p>打开burpsuite，密码填[123456]，抓包发现在我们提交账号密码的同时，level也被提交了，前面看到Editor的等级是3，如果改成1那就是最高管理员的等级了</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/12.png" alt="十二"></p><p>把level后的参数改成1，然后点Forward放包出去。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/13.png" alt="十三"></p><p>点[Interceot is off] 关闭bp的拦截。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/14.png" alt="十四"></p><p>退出登陆然后再重新用这个账号登陆，然后惊喜的发现左边的权限变多了，所属的组变成了Super Administrator,也就是网站的最高管理员权限。</p><p><img src="/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/15.png" alt="十五"></p><h6 id="注：本教程仅供学习，切勿用于非法用途！"><a href="#注：本教程仅供学习，切勿用于非法用途！" class="headerlink" title="(注：本教程仅供学习，切勿用于非法用途！)"></a>(注：本教程仅供学习，切勿用于非法用途！)</h6>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;emmm,这是西普铁三训练营里面的一个Fiyo CMS权限提升漏洞复现，记录一下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2018/04/10/CVE-2017-6823-Fiyo-CMS权限提升漏洞/1.png&quot; alt=&quot;图一&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="web" scheme="http://yoursite.com/categories/web/"/>
+    
+    
+      <category term="web漏洞" scheme="http://yoursite.com/tags/web%E6%BC%8F%E6%B4%9E/"/>
+    
+      <category term="cms" scheme="http://yoursite.com/tags/cms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ms17_010漏洞的利用</title>
+    <link href="http://yoursite.com/2018/04/09/Ms17-010%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%88%A9%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/</id>
+    <published>2018-04-09T11:39:36.000Z</published>
+    <updated>2018-04-10T09:32:45.812Z</updated>
+    
+    <content type="html"><![CDATA[<p>ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。</p><p> 攻击机：<br> kali<br> ip:192.168.245.132</p><p> 受害机：<br> win7<br> ip:192.168.61.160<br> <a id="more"></a><br>这里我是用我内网的两台机子测试的，如果是外网的那就要设置路由器的端口转发之类的。</p><h2 id="漏洞分析"><a href="#漏洞分析" class="headerlink" title="漏洞分析"></a>漏洞分析</h2><p>漏洞出现在Windows SMB v1中的内核态函数srv!SrvOs2FeaListToNt在处理FEA(File Extended Attributes)转换时，在大非分页池(内核的数据结构，Large Non-Paged Kernel Pool)上存在缓冲区溢出。函数srv!SrvOs2FeaListToNt在将FEA list转换成NTFEA(Windows NT FEA) list前会调用srv!SrvOs2FeaListSizeToNt去计算转换后的FEA lsit的大小。然后会进行如下操作：</p><p>1.srv!SrvOs2FeaListSizeToNt会计算FEA list的大小并更新待转换的FEA list的大小</p><p>2.因为错误的使用WORD强制类型转换，导致计算出来的待转换的FEA list的大小比真正的FEA list大</p><p>3.因为原先的总大小计算错误，导致当FEA list被转化为NTFEA list时，会在非分页池导致缓冲区溢出</p><h2 id="如何利用"><a href="#如何利用" class="headerlink" title="如何利用"></a>如何利用</h2><p>博主这里是直接用kali的msf里面自带的ms17_010模块<br>启动msf控制台<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure></p><p>然后使用ms17_010_eternalblue这个模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use exploit/windows/smb/ms17_010_eternalblue</span><br></pre></td></tr></table></figure></p><p><img src="/2018/04/09/Ms17-010漏洞的利用/1.jpg" alt="image"></p><p>用show options 命令查看设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show options</span><br></pre></td></tr></table></figure></p><p><img src="/2018/04/09/Ms17-010漏洞的利用/2.jpg" alt="image"></p><p>Exploit target表示可以攻击的目标，这个模块只能攻击win7和win server2008的，yes是表示需要设置的，由图可以看出其他都已经设置好了，我们只需要设置RHOST，也就是ip地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set RHOST 192.168.61.160</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exoloit</span><br></pre></td></tr></table></figure><p>开始监听会话</p><p><img src="/2018/04/09/Ms17-010漏洞的利用/3.jpg" alt="image"></p><p>看到这样子那就表示已经成功getshell了</p><p><img src="/2018/04/09/Ms17-010漏洞的利用/4.jpg" alt="image"></p><p>尝试这输入一些命令</p><p><img src="/2018/04/09/Ms17-010漏洞的利用/5.jpg" alt="image"></p><p>好的已经成功入侵了这台电脑，现在他的电脑就是你的电脑，你的电脑还是你的电脑，接下来干嘛自己发挥想象力了！炒鸡简单的一个漏洞利用。</p><h2 id="如何防护"><a href="#如何防护" class="headerlink" title="如何防护"></a>如何防护</h2><p>电脑管家或者360之类的都已经有了对应的补丁，下载补丁就行了。</p><h6 id="注：本教程仅供学习，切勿用于非法用途！"><a href="#注：本教程仅供学习，切勿用于非法用途！" class="headerlink" title="(注：本教程仅供学习，切勿用于非法用途！)"></a>(注：本教程仅供学习，切勿用于非法用途！)</h6>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。&lt;/p&gt;
+&lt;p&gt; 攻击机：&lt;br&gt; kali&lt;br&gt; ip:192.168.245.132&lt;/p&gt;
+&lt;p&gt; 受害机：&lt;br&gt; win7&lt;br&gt; ip:192.168.61.160&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="系统漏洞" scheme="http://yoursite.com/categories/%E7%B3%BB%E7%BB%9F%E6%BC%8F%E6%B4%9E/"/>
+    
+    
+  </entry>
+  
+</feed>
