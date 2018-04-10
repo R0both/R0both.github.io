@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -81,22 +81,22 @@
 
 
 
-<meta name="description" content="ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。  攻击机： kali ip:192.168.245.132  受害机： win7 ip:192.168.61.160 这里我是用我内网的两台机子测试的，如果是外网的那就要设置路由器的端口转发之类的。 漏洞分析漏洞出现在Windows SMB v1中的内核">
+<meta name="description" content="ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。  攻击机： kali ip:192.168.245.132  受害机： win7 ip:192.168.61.160">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ms17_010漏洞的利用">
 <meta property="og:url" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。  攻击机： kali ip:192.168.245.132  受害机： win7 ip:192.168.61.160 这里我是用我内网的两台机子测试的，如果是外网的那就要设置路由器的端口转发之类的。 漏洞分析漏洞出现在Windows SMB v1中的内核">
+<meta property="og:description" content="ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。  攻击机： kali ip:192.168.245.132  受害机： win7 ip:192.168.61.160">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/5.jpg">
-<meta property="og:updated_time" content="2018-04-10T04:20:15.312Z">
+<meta property="og:updated_time" content="2018-04-10T09:28:40.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ms17_010漏洞的利用">
-<meta name="twitter:description" content="ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。  攻击机： kali ip:192.168.245.132  受害机： win7 ip:192.168.61.160 这里我是用我内网的两台机子测试的，如果是外网的那就要设置路由器的端口转发之类的。 漏洞分析漏洞出现在Windows SMB v1中的内核">
+<meta name="twitter:description" content="ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。  攻击机： kali ip:192.168.245.132  受害机： win7 ip:192.168.61.160">
 <meta name="twitter:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/1.jpg">
 
 
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -371,8 +371,7 @@
       
         <p>ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。</p>
 <p> 攻击机：<br> kali<br> ip:192.168.245.132</p>
-<p> 受害机：<br> win7<br> ip:192.168.61.160</p>
-<p>这里我是用我内网的两台机子测试的，如果是外网的那就要设置路由器的端口转发之类的。</p>
+<p> 受害机：<br> win7<br> ip:192.168.61.160<br> <a id="more"></a><br>这里我是用我内网的两台机子测试的，如果是外网的那就要设置路由器的端口转发之类的。</p>
 <h2 id="漏洞分析"><a href="#漏洞分析" class="headerlink" title="漏洞分析"></a>漏洞分析</h2><p>漏洞出现在Windows SMB v1中的内核态函数srv!SrvOs2FeaListToNt在处理FEA(File Extended Attributes)转换时，在大非分页池(内核的数据结构，Large Non-Paged Kernel Pool)上存在缓冲区溢出。函数srv!SrvOs2FeaListToNt在将FEA list转换成NTFEA(Windows NT FEA) list前会调用srv!SrvOs2FeaListSizeToNt去计算转换后的FEA lsit的大小。然后会进行如下操作：</p>
 <p>1.srv!SrvOs2FeaListSizeToNt会计算FEA list的大小并更新待转换的FEA list的大小</p>
 <p>2.因为错误的使用WORD强制类型转换，导致计算出来的待转换的FEA list的大小比真正的FEA list大</p>
@@ -724,6 +723,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
