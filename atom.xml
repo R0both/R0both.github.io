@@ -34,4 +34,26 @@
     
   </entry>
   
+  <entry>
+    <title>hello</title>
+    <link href="http://yoursite.com/2018/04/23/hello/"/>
+    <id>http://yoursite.com/2018/04/23/hello/</id>
+    <published>2018-04-22T16:01:53.000Z</published>
+    <updated>2018-04-22T16:02:04.810Z</updated>
+    
+    <content type="html"><![CDATA[<p>hello world</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;hello world&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
 </feed>
