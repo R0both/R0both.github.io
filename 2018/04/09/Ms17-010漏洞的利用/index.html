@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/09/Ms17-010漏洞的利用/5.jpg">
-<meta property="og:updated_time" content="2018-04-10T09:32:45.812Z">
+<meta property="og:updated_time" content="2018-05-03T12:08:44.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ms17_010漏洞的利用">
 <meta name="twitter:description" content="ms_17_010是2017年的一个Windows的smb远程代码执行漏洞，这也算是一个被玩烂了的洞了，这篇文章就是关于如何利用和防护这个漏洞。  攻击机： kali ip:192.168.245.132  受害机： win7 ip:192.168.61.160">
@@ -407,7 +407,7 @@
 <p>用show options 命令查看设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show options</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2018/04/09/Ms17-010漏洞的利用/2.jpg" alt="image"></p>
 <p>Exploit target表示可以攻击的目标，这个模块只能攻击win7和win server2008的，yes是表示需要设置的，由图可以看出其他都已经设置好了，我们只需要设置RHOST，也就是ip地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set RHOST 192.168.61.160</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exoloit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exploit</span><br></pre></td></tr></table></figure>
 <p>开始监听会话</p>
 <p><img src="/2018/04/09/Ms17-010漏洞的利用/3.jpg" alt="image"></p>
 <p>看到这样子那就表示已经成功getshell了</p>
