@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="-ctf相关," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -83,13 +83,12 @@
 
 
 
-<meta name="description" content="web1)、超简单">
-<meta name="keywords" content="-ctf相关">
+<meta name="description" content="title: 南宁市网络空间安全大赛date: 2018-12-20 00:06:44tags: -ctf相关— web1)、超简单">
 <meta property="og:type" content="article">
-<meta property="og:title" content="南宁市网络空间安全大赛">
+<meta property="og:title" content="Robot&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/2018/12/20/南宁市网络空间安全大赛/index.html">
 <meta property="og:site_name" content="Robot&#39;s blog">
-<meta property="og:description" content="web1)、超简单">
+<meta property="og:description" content="title: 南宁市网络空间安全大赛date: 2018-12-20 00:06:44tags: -ctf相关— web1)、超简单">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/12/20/南宁市网络空间安全大赛/1.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/20/南宁市网络空间安全大赛/4.png">
@@ -97,10 +96,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/12/20/南宁市网络空间安全大赛/2.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/20/南宁市网络空间安全大赛/3.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/20/南宁市网络空间安全大赛/6.png">
-<meta property="og:updated_time" content="2018-11-26T03:08:18.435Z">
+<meta property="og:updated_time" content="2018-11-26T03:10:16.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="南宁市网络空间安全大赛">
-<meta name="twitter:description" content="web1)、超简单">
+<meta name="twitter:title" content="Robot&#39;s blog">
+<meta name="twitter:description" content="title: 南宁市网络空间安全大赛date: 2018-12-20 00:06:44tags: -ctf相关— web1)、超简单">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/20/南宁市网络空间安全大赛/1.png">
 
 
@@ -137,7 +136,7 @@
 
 
 
-  <title>南宁市网络空间安全大赛 | Robot's blog</title>
+  <title> | Robot's blog</title>
   
 
 
@@ -281,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">南宁市网络空间安全大赛</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -293,7 +292,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-20T00:06:44+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-20T00:05:30+08:00">
                 2018-12-20
               </time>
             
@@ -312,7 +311,7 @@
 
           
           
-             <span id="/2018/12/20/南宁市网络空间安全大赛/" class="leancloud_visitors" data-flag-title="南宁市网络空间安全大赛">
+             <span id="/2018/12/20/南宁市网络空间安全大赛/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,7 +337,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,167
+                  2,190
                 </span>
               
 
@@ -375,7 +374,9 @@
       
 
       
-        <h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h3 id="1-、超简单"><a href="#1-、超简单" class="headerlink" title="1)、超简单"></a>1)、超简单</h3><a id="more"></a>
+        <hr>
+<p>title: 南宁市网络空间安全大赛<br>date: 2018-12-20 00:06:44<br>tags: -ctf相关—</p>
+<h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h3 id="1-、超简单"><a href="#1-、超简单" class="headerlink" title="1)、超简单"></a>1)、超简单</h3><a id="more"></a>
 <p>打开题目就看到了源码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$white_list = range(0,9); </span><br><span class="line">require_once(&apos;flag.php&apos;); </span><br><span class="line">if(isset($_REQUEST[&apos;no&apos;]))&#123; </span><br><span class="line">    $a=$_REQUEST[&apos;no&apos;]; </span><br><span class="line">    if(@ereg(&quot;^[0-9]+$&quot;, $a) === FALSE)&#123; </span><br><span class="line">        echo &apos;no must be number&apos;; </span><br><span class="line">    &#125;else&#123; </span><br><span class="line">        if(in_array($a,$white_list))&#123; </span><br><span class="line">            if(strlen($a)&gt;1)&#123; </span><br><span class="line">                echo &apos;you are a great dark phper&lt;br&gt;&apos;; </span><br><span class="line">                echo &quot;&lt;img src=&apos;dark.gif&apos;&gt;&lt;br&gt;&quot;; </span><br><span class="line">                echo $flag; </span><br><span class="line">            &#125;else&#123; </span><br><span class="line">                echo &apos;you no dark&apos;; </span><br><span class="line">            &#125; </span><br><span class="line">        &#125;else&#123; </span><br><span class="line">            echo &apos;you are so dark&apos;; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;     </span><br><span class="line">&#125;else </span><br><span class="line">    highlight_file(__FILE__);</span><br></pre></td></tr></table></figure>
 <p>看到里面有个ereg()函数，因为ereg函数存在NULL截断漏洞，所以直接构造payload：</p>
@@ -465,12 +466,6 @@
 </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/ctf相关/" rel="tag"><i class="fa fa-tag"></i> -ctf相关</a>
-          
-        </div>
       
 
       
